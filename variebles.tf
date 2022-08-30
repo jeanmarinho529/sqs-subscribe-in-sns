@@ -1,10 +1,10 @@
 variable "topic_queue" {
-  type = map(string)
+  type        = map(string)
   description = "value"
 }
 
 variable "team" {
-  type = string
+  type        = string
   description = "name of the team that owns the resource"
 }
 
@@ -41,13 +41,13 @@ variable "use_prefixes" {
 }
 
 variable "tags" {
-  type = map(string)
+  type        = map(string)
   description = "tags"
-  default = {}
+  default     = {}
 }
 
 variable "topic_tags" {
-  type = map(string)
+  type        = map(string)
   description = "topic tags"
   default = {
     product = "sns"
@@ -55,7 +55,7 @@ variable "topic_tags" {
 }
 
 variable "queue_tags" {
-  type = map(string)
+  type        = map(string)
   description = "queue tags"
   default = {
     product = "sqs"
@@ -63,7 +63,7 @@ variable "queue_tags" {
 }
 
 variable "queue_actions" {
-  type = list(string)
+  type        = list(string)
   description = "queue actions"
   default = [
     "sqs:SendMessage"
@@ -71,41 +71,41 @@ variable "queue_actions" {
 }
 
 variable "queue_version" {
-  type = string
+  type        = string
   description = "queue version"
-  default = "2008-10-17"
+  default     = "2008-10-17"
 }
 
 variable "topic_version" {
-  type = string
+  type        = string
   description = "topic version"
-  default = "2008-10-17"
+  default     = "2008-10-17"
 }
 
 variable "topic_actions" {
-  type = list(string)
+  type        = list(string)
   description = "topic actions"
   default = [
-      "SNS:Subscribe",
-      "SNS:SetTopicAttributes",
-      "SNS:RemovePermission",
-      "SNS:Receive",
-      "SNS:Publish",
-      "SNS:ListSubscriptionsByTopic",
-      "SNS:GetTopicAttributes",
-      "SNS:DeleteTopic",
-      "SNS:AddPermission",
+    "SNS:Subscribe",
+    "SNS:SetTopicAttributes",
+    "SNS:RemovePermission",
+    "SNS:Receive",
+    "SNS:Publish",
+    "SNS:ListSubscriptionsByTopic",
+    "SNS:GetTopicAttributes",
+    "SNS:DeleteTopic",
+    "SNS:AddPermission",
   ]
 }
 
 variable "queue_police_settings" {
-  type = map(any)
+  type        = map(any)
   description = "queue police settings"
-  default = {}
+  default     = {}
 }
 
 variable "topic_police_settings" {
-  type = map(any)
+  type        = map(any)
   description = "topic police settings"
-  default = {}
+  default     = {}
 }

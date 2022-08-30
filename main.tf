@@ -22,7 +22,7 @@ resource "aws_sqs_queue" "this" {
 resource "aws_sqs_queue" "dlq" {
   count = local.create_queue
   name  = local.prefix_dlq_queue_name
-  tags = merge(var.tags, var.queue_tags)
+  tags  = merge(var.tags, var.queue_tags)
 }
 
 resource "aws_sns_topic_subscription" "this" {
