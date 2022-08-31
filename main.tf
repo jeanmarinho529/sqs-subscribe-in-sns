@@ -28,10 +28,10 @@ resource "aws_sqs_queue" "dlq" {
   count = local.create_queue
   name  = local.prefix_dlq_queue_name
 
-  delay_seconds             = lookup(var.queue_settings, "delay_seconds", 0)
-  max_message_size          = lookup(var.queue_settings, "max_message_size", 262144)           # 14 days
-  message_retention_seconds = lookup(var.queue_settings, "message_retention_seconds", 1209600) # 262 KB
-  receive_wait_time_seconds = lookup(var.queue_settings, "receive_wait_time_seconds", 10)
+  delay_seconds             = lookup(var.queue_dlq_settings, "delay_seconds", 0)
+  max_message_size          = lookup(var.queue_dlq_settings, "max_message_size", 262144)           # 14 days
+  message_retention_seconds = lookup(var.queue_dlq_settings, "message_retention_seconds", 1209600) # 262 KB
+  receive_wait_time_seconds = lookup(var.queue_dlq_settings, "receive_wait_time_seconds", 10)
 
   tags = merge(var.tags, var.queue_tags)
 }
