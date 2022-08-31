@@ -70,18 +70,6 @@ variable "queue_actions" {
   ]
 }
 
-variable "queue_version" {
-  type        = string
-  description = "queue version"
-  default     = "2008-10-17"
-}
-
-variable "topic_version" {
-  type        = string
-  description = "topic version"
-  default     = "2008-10-17"
-}
-
 variable "topic_actions" {
   type        = list(string)
   description = "topic actions"
@@ -108,4 +96,9 @@ variable "topic_police_settings" {
   type        = map(any)
   description = "topic police settings"
   default     = {}
+}
+
+variable "account_id" {
+  type        = string
+  description = "account id"
 }

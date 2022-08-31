@@ -16,6 +16,15 @@ data "aws_iam_policy_document" "sns_topic_policy" {
 
     effect = lookup(var.topic_police_settings, "effect", "Allow")
 
+    condition {
+      test     = "StringEquals"
+      variable = "AWS:SourceOwner"
+
+      values = [
+        var.account_id
+      ]
+    }
+
     principals {
       type        = "AWS"
       identifiers = ["*"]
