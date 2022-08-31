@@ -47,7 +47,8 @@ resource "aws_sqs_queue_policy" "this" {
 }
 
 data "aws_iam_policy_document" "sqs_queue_policy" {
-  version = lookup(var.queue_police_settings, "version", "2008-10-17")
+  version   = lookup(var.queue_police_settings, "version", "2008-10-17")
+  policy_id = lookup(var.queue_police_settings, "policy_id", "__default_policy_ID")
 
   statement {
     actions = lookup(var.queue_police_settings, "actions", var.queue_actions)
