@@ -92,6 +92,18 @@ variable "queue_police_settings" {
   default     = {}
 }
 
+variable "queue_settings" {
+  type        = map(string)
+  description = "queue settings"
+  default     = {}
+}
+
+variable "queue_dlq_settings" {
+  type        = map(string)
+  description = "queue dlq settings"
+  default     = {}
+}
+
 variable "topic_police_settings" {
   type        = map(any)
   description = "topic police settings"
